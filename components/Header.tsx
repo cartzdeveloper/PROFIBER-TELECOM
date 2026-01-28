@@ -16,8 +16,8 @@ export const Header: React.FC = () => {
     <header className="fixed top-0 left-0 w-full z-50 bg-profiber-dark/95 backdrop-blur-md border-b border-white/5 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-24">
-          {/* Left: Logo */}
-          <div className="flex-shrink-0 flex items-center w-[140px] md:w-[200px]">
+          {/* Left: Logo Area (sized for balance) */}
+          <div className="flex-shrink-0 flex items-center w-[160px] md:w-[220px]">
             <a href="#" className="flex items-center gap-2 group">
               <img 
                 src="https://profiber.net.br/arquivos_publicos/profiber_logo_brancaedit.png" 
@@ -27,13 +27,13 @@ export const Header: React.FC = () => {
             </a>
           </div>
 
-          {/* Center: Desktop Navigation */}
-          <nav className="hidden md:flex flex-1 justify-center space-x-8 items-center">
+          {/* Center: Desktop Navigation (Absolutely Centered) */}
+          <nav className="hidden md:flex flex-1 justify-center items-center space-x-8">
             {navLinks.map((link) => (
               <a 
                 key={link.name}
                 href={link.href} 
-                className="text-gray-300 hover:text-white px-1 py-2 text-sm font-medium relative group transition-colors"
+                className="text-gray-300 hover:text-white px-1 py-2 text-sm font-medium relative group transition-colors uppercase tracking-wide"
               >
                 {link.name}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-profiber-sky transition-all duration-300 ease-out group-hover:w-full"></span>
@@ -41,9 +41,9 @@ export const Header: React.FC = () => {
             ))}
           </nav>
 
-          {/* Right: Mobile menu button & Spacer for balance */}
-          <div className="flex items-center justify-end w-[140px] md:w-[200px]">
-             {/* Placeholder for future CTA or just layout balance on desktop */}
+          {/* Right: Mobile Menu & Spacer for Balance */}
+          <div className="flex items-center justify-end w-[160px] md:w-[220px]">
+             {/* Invisible spacer to balance the logo width on desktop if needed, or put CTA here */}
              <div className="hidden md:block"></div>
 
             {/* Mobile menu button */}
@@ -61,13 +61,13 @@ export const Header: React.FC = () => {
 
       {/* Mobile Menu */}
       <div className={`md:hidden bg-profiber-dark border-b border-white/10 overflow-hidden transition-all duration-300 ease-in-out ${isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <div className="px-4 pt-2 pb-6 space-y-2">
           {navLinks.map((link) => (
             <a 
               key={link.name}
               href={link.href} 
               onClick={() => setIsMenuOpen(false)} 
-              className="block px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-white/10 hover:pl-4 transition-all duration-200 relative group text-center"
+              className="block px-3 py-3 rounded-xl text-base font-bold text-gray-300 hover:text-white hover:bg-white/10 text-center transition-all duration-200"
             >
               {link.name}
             </a>
