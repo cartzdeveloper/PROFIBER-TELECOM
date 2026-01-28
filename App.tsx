@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { FileText, Shield } from 'lucide-react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
@@ -12,38 +12,53 @@ import { LegalModal } from './components/LegalModals';
 import { Plan } from './types';
 import { TERMS_OF_USE, PRIVACY_POLICY, CONTACT_INFO } from './constants';
 
+// --- FadeInSection Component ---
+// This internal component handles the Intersection Observer logic per section
+// ensuring smooth animations only when elements come into view.
+const FadeInSection = ({ children }: { children: React.ReactNode }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const domRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        // Trigger animation when element is 10% visible
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          // Stop observing once visible to save resources
+          if (domRef.current) observer.unobserve(domRef.current);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px" // Trigger slightly before bottom
+    });
+
+    const { current } = domRef;
+    if (current) observer.observe(current);
+
+    return () => {
+      if (current) observer.unobserve(current);
+    }
+  }, []);
+
+  return (
+    <div
+      ref={domRef}
+      className={`transition-all duration-1000 ease-out transform ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+      }`}
+    >
+      {children}
+    </div>
+  );
+};
+
 function App() {
   const [selectedPlan, setSelectedPlan] = useState<Plan | null>(null);
   const [isTermsOpen, setIsTermsOpen] = useState(false);
   const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
   
-  useEffect(() => {
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('opacity-100', 'translate-y-0');
-          entry.target.classList.remove('opacity-0', 'translate-y-10');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
-
-    // Select all direct sections to apply animation
-    const sections = document.querySelectorAll('main > section');
-    sections.forEach(el => {
-      el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
-      observer.observe(el);
-    });
-
-    return () => observer.disconnect();
-  }, []);
-
   const handleSelectPlan = (plan: Plan) => {
     setSelectedPlan(plan);
     // Smooth scroll to the subscription form
@@ -57,13 +72,32 @@ function App() {
     <div className="min-h-screen bg-slate-50 font-sans selection:bg-blue-200 selection:text-blue-900">
       <Header />
       <main>
-        <Hero selectedPlan={selectedPlan} />
-        <Pricing onSelectPlan={handleSelectPlan} />
-        <Coverage />
-        <Features />
-        <FAQ />
-        <SubscriptionSection selectedPlan={selectedPlan} />
+        {/* We wrap each major section with FadeInSection for individual animations */}
+        <FadeInSection>
+          <Hero selectedPlan={selectedPlan} />
+        </FadeInSection>
+        
+        <FadeInSection>
+          <Pricing onSelectPlan={handleSelectPlan} />
+        </FadeInSection>
+        
+        <FadeInSection>
+          <Coverage />
+        </FadeInSection>
+        
+        <FadeInSection>
+          <Features />
+        </FadeInSection>
+        
+        <FadeInSection>
+          <FAQ />
+        </FadeInSection>
+        
+        <FadeInSection>
+          <SubscriptionSection selectedPlan={selectedPlan} />
+        </FadeInSection>
       </main>
+      
       <Footer 
         onOpenTerms={() => setIsTermsOpen(true)}
         onOpenPrivacy={() => setIsPrivacyOpen(true)}

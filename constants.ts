@@ -1,4 +1,4 @@
-import { Clock, Users, FileSignature, Zap } from 'lucide-react';
+import { Clock, Users, Gamepad2, Zap } from 'lucide-react';
 import { Plan, Feature, FAQItem } from './types';
 
 export const PLANS: Plan[] = [
@@ -66,26 +66,26 @@ export const FEATURES: Feature[] = [
   {
     id: 1,
     icon: Clock,
-    title: "Instalação em 24h",
-    description: "Nossa equipe técnica agiliza sua conexão para você não perder tempo."
+    title: "Instalação Ágil",
+    description: "Equipe técnica pronta para conectar você em até 24h após a aprovação."
   },
   {
     id: 2,
     icon: Users,
     title: "Suporte Humanizado",
-    description: "Fale com pessoas reais. Atendimento rápido via WhatsApp e telefone."
+    description: "Nada de robôs confusos. Fale com gente de verdade via WhatsApp e telefone."
   },
   {
     id: 3,
-    icon: FileSignature,
-    title: "Sem Fidelidade",
-    description: "Confiança na qualidade. Você fica porque gosta, não porque é obrigado."
+    icon: Gamepad2, // Changed icon to represent Gaming/Low Latency
+    title: "Baixa Latência (Ping)",
+    description: "Jogue online e faça vídeo chamadas sem travamentos. Rotas otimizadas para games."
   },
   {
     id: 4,
     icon: Zap,
     title: "100% Fibra Óptica",
-    description: "Tecnologia de ponta a ponta (FTTH) garantindo ultra velocidade."
+    description: "Tecnologia FTTH (Fiber to the Home) garantindo estabilidade total até dentro da sua casa."
   }
 ];
 
@@ -100,7 +100,7 @@ export const FAQ_ITEMS: FAQItem[] = [
   },
   {
     question: "Não recebi a fatura desse mês, como faço para pagá-la?",
-    answer: "A 2ª via da fatura está disponível na Área do Cliente. Você também pode solicitar por e-mail, pelas redes sociais ou retirá-la na unidade da sua região. Não esqueça de manter seu cadastro sempre atualizado."
+    answer: "É super simples! Basta enviar uma mensagem 'Olá' para o nosso WhatsApp. Nossa assistente virtual enviará seu boleto ou código PIX em segundos. Sem filas e sem precisar baixar aplicativos extras."
   },
   {
     question: "Quais as formas de pagamento de mensalidades?",

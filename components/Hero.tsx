@@ -8,11 +8,22 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ selectedPlan }) => {
   return (
-    <section id="home" className="relative pt-36 lg:pt-48 pb-20 overflow-hidden bg-profiber-dark min-h-[90vh] flex items-center">
-      {/* Background Gradients/Shapes */}
-      <div className="absolute top-0 left-1/2 w-full -translate-x-1/2 h-full z-0 pointer-events-none">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-600/20 rounded-full blur-[100px] mix-blend-screen animate-pulse"></div>
-        <div className="absolute bottom-10 right-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-[120px] mix-blend-screen"></div>
+    <section id="home" className="relative pt-36 lg:pt-48 pb-24 overflow-hidden bg-profiber-dark min-h-[90vh] flex items-center border-b border-white/5">
+      
+      {/* Background - Tech Grid Effect */}
+      <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
+        <div className="absolute inset-0" 
+             style={{ 
+               backgroundImage: `
+                 linear-gradient(to right, #3b82f6 1px, transparent 1px),
+                 linear-gradient(to bottom, #3b82f6 1px, transparent 1px)
+               `,
+               backgroundSize: '40px 40px',
+               maskImage: 'linear-gradient(to bottom, transparent, black 40%, black 80%, transparent)'
+             }}>
+        </div>
+        {/* Glowing orb in background */}
+        <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-blue-600/30 rounded-full blur-[120px] mix-blend-screen animate-pulse"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-12 lg:gap-8">
@@ -25,11 +36,11 @@ export const Hero: React.FC<HeroProps> = ({ selectedPlan }) => {
             <img 
                 src="https://profiber.net.br/arquivos_publicos/profiber_logo_brancaedit.png" 
                 alt="Profiber Telecom Logo" 
-                className="h-20 md:h-28 lg:h-32 w-auto drop-shadow-[0_0_15px_rgba(37,99,235,0.5)]"
+                className="h-20 md:h-28 lg:h-32 w-auto drop-shadow-[0_0_25px_rgba(59,130,246,0.6)]"
             />
           </div>
 
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-900/40 border border-blue-500/30 text-blue-300 text-sm font-semibold mb-6 backdrop-blur-sm">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-950/50 border border-blue-500/50 text-blue-200 text-sm font-semibold mb-6 backdrop-blur-md shadow-[0_0_15px_rgba(37,99,235,0.3)]">
             <span className="relative flex h-2.5 w-2.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500"></span>
@@ -41,31 +52,31 @@ export const Hero: React.FC<HeroProps> = ({ selectedPlan }) => {
             {selectedPlan ? (
               <>
                 Você escolheu o <br/>
-                <span className="bg-gradient-to-r from-profiber-sky to-blue-600 gradient-text text-transparent filter drop-shadow-sm">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-200 to-white filter drop-shadow-sm">
                   Plano {selectedPlan.speed}
                 </span>
               </>
             ) : (
               <>
-                Velocidade que <br/>
-                <span className="bg-gradient-to-r from-profiber-sky to-blue-600 gradient-text text-transparent filter drop-shadow-sm">
-                  Impulsiona seu Mundo
+                Conecte-se ao <br/>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-white filter drop-shadow-sm">
+                  Futuro Agora
                 </span>
               </>
             )}
           </h1>
           
-          <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl leading-relaxed">
+          <p className="text-lg md:text-xl text-slate-300 mb-8 max-w-2xl leading-relaxed">
             {selectedPlan 
               ? "Ótima escolha! Role para baixo para finalizar sua contratação e aproveitar a melhor estabilidade para games e streaming."
-              : "Chega de travamentos. Conecte-se com estabilidade garantida para games, streaming 4K e home office com a Profiber."
+              : "Esqueça a internet lenta. Tenha ultravelocidade, baixa latência e suporte que resolve. Sua casa merece Profiber."
             }
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
             <a 
               href={selectedPlan ? "#subscription-form" : "#plans"} 
-              className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-bold rounded-xl text-white bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 shadow-lg shadow-blue-500/40 transform hover:-translate-y-1 transition-all duration-200"
+              className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-bold rounded-xl text-white bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 shadow-[0_0_20px_rgba(37,99,235,0.5)] transform hover:-translate-y-1 transition-all duration-300"
             >
               {selectedPlan ? "Finalizar Agora" : "Ver Planos"}
               <ArrowRight className="ml-2 w-5 h-5" />
@@ -75,7 +86,7 @@ export const Hero: React.FC<HeroProps> = ({ selectedPlan }) => {
                 href="https://wa.me/5582996314684" 
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center px-8 py-4 border border-white/10 text-base font-medium rounded-xl text-white bg-white/5 hover:bg-white/10 backdrop-blur-md transition-all"
+                className="inline-flex items-center justify-center px-8 py-4 border border-white/20 text-base font-medium rounded-xl text-white bg-white/5 hover:bg-white/10 backdrop-blur-md transition-all hover:border-white/40"
               >
                 Falar no WhatsApp
               </a>
@@ -84,25 +95,25 @@ export const Hero: React.FC<HeroProps> = ({ selectedPlan }) => {
         </div>
 
         {/* Visual Content */}
-        <div className="w-full lg:w-1/2 relative perspective-1000 mt-8 lg:mt-0">
-           <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/50 border border-white/10 group transform transition-transform duration-500 hover:rotate-y-2">
+        <div className="w-full lg:w-1/2 relative perspective-1000 mt-12 lg:mt-0">
+           <div className="relative rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(15,23,42,0.5)] border border-white/10 group transform transition-transform duration-500 hover:rotate-1 hover:scale-[1.02]">
              {/* Overlay for aesthetic */}
-             <div className="absolute inset-0 bg-gradient-to-t from-profiber-dark/80 via-transparent to-transparent z-10"></div>
+             <div className="absolute inset-0 bg-gradient-to-t from-profiber-dark/90 via-transparent to-transparent z-10"></div>
              
              <img 
                src="https://i.imgur.com/uSKGgmP.jpeg" 
                alt="Futuristic Cyberpunk City representing High Speed" 
-               className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700"
+               className="w-full h-auto object-cover opacity-90"
              />
 
              {/* Floating Badge */}
-             <div className="absolute bottom-6 left-6 z-20 bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-xl flex items-center gap-4 shadow-lg">
-                <div className="p-3 bg-profiber-royal rounded-lg shadow-inner">
+             <div className="absolute bottom-6 left-6 z-20 bg-black/40 backdrop-blur-xl border border-white/10 p-4 rounded-2xl flex items-center gap-4 shadow-lg hover:bg-black/60 transition-colors">
+                <div className="p-3 bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl shadow-inner">
                   {selectedPlan ? <CheckCircle2 className="w-6 h-6 text-white" /> : <Wifi className="w-6 h-6 text-white" />}
                 </div>
                 <div>
-                  <p className="text-gray-300 text-xs font-medium uppercase tracking-wider">{selectedPlan ? "Plano Selecionado" : "Status da Rede"}</p>
-                  <p className="text-white font-bold text-sm">{selectedPlan ? selectedPlan.speed : "100% Estável"}</p>
+                  <p className="text-blue-200 text-xs font-bold uppercase tracking-wider">{selectedPlan ? "Plano Selecionado" : "Status da Rede"}</p>
+                  <p className="text-white font-black text-base">{selectedPlan ? selectedPlan.speed : "100% Estável"}</p>
                 </div>
              </div>
            </div>
