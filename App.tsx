@@ -15,7 +15,7 @@ import { TERMS_OF_USE, PRIVACY_POLICY, CONTACT_INFO } from './constants';
 // --- FadeInSection Component ---
 // This internal component handles the Intersection Observer logic per section
 // ensuring smooth animations only when elements come into view.
-const FadeInSection = ({ children }: { children: React.ReactNode }) => {
+const FadeInSection = ({ children }: { children?: React.ReactNode }) => {
   const [isVisible, setIsVisible] = useState(false);
   const domRef = useRef<HTMLDivElement>(null);
 
