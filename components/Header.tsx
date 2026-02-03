@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, User } from 'lucide-react';
 import { CONTACT_INFO } from '../constants';
 
 export const Header: React.FC = () => {
@@ -59,12 +59,23 @@ export const Header: React.FC = () => {
                 </a>
               ))}
               
+              {/* Área do Cliente Button */}
+              <a 
+                href="https://central.profiber.net.br"
+                target="_blank"
+                rel="noreferrer"
+                className="ml-4 px-4 py-2 rounded-full border border-white/20 hover:border-profiber-sky/50 text-gray-200 hover:text-white hover:bg-white/5 text-sm font-medium transition-all flex items-center gap-2 group"
+              >
+                <User className="w-4 h-4 group-hover:text-profiber-sky transition-colors" />
+                Área do Cliente
+              </a>
+              
               {/* Desktop CTA Button */}
               <a 
                 href={`https://wa.me/${CONTACT_INFO.whatsapp}`}
                 target="_blank"
                 rel="noreferrer"
-                className="ml-4 px-5 py-2 rounded-full bg-profiber-royal hover:bg-blue-600 text-white text-sm font-bold transition-all shadow-[0_0_15px_rgba(37,99,235,0.3)] hover:shadow-[0_0_20px_rgba(37,99,235,0.5)] transform hover:-translate-y-0.5"
+                className="ml-3 px-5 py-2 rounded-full bg-profiber-royal hover:bg-blue-600 text-white text-sm font-bold transition-all shadow-[0_0_15px_rgba(37,99,235,0.3)] hover:shadow-[0_0_20px_rgba(37,99,235,0.5)] transform hover:-translate-y-0.5"
               >
                 Assinar Agora
               </a>
@@ -108,7 +119,18 @@ export const Header: React.FC = () => {
               </a>
             ))}
             
-            <div className="pt-2 mt-2 border-t border-white/10">
+            <div className="pt-2 mt-2 border-t border-white/10 space-y-3">
+              {/* Mobile Client Area Button */}
+              <a 
+                 href="https://central.profiber.net.br"
+                 target="_blank"
+                 rel="noreferrer"
+                 className="flex items-center justify-center gap-2 w-full py-3 rounded-xl border border-white/10 bg-white/5 text-white font-medium hover:bg-white/10 transition-colors"
+              >
+                <User className="w-4 h-4" />
+                Área do Cliente
+              </a>
+
               <a 
                  href={`https://wa.me/${CONTACT_INFO.whatsapp}`}
                  target="_blank"
