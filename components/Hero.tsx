@@ -126,19 +126,19 @@ export const Hero: React.FC<HeroProps> = ({ selectedPlan }) => {
           
           <div className="flex flex-col sm:flex-row gap-6 w-full sm:w-auto items-center">
             {/* 
-                ULTRA-SOPHISTICATED BUTTON 
-                1. p-[1px] creates a very thin, laser-like border.
-                2. h-14 makes it sleeker (standard is usually 12-14 for high-end UI).
-                3. Conic gradient adjusted to blend Royal Blue with a flash of White/Sky Blue.
+                ULTRA-SOPHISTICATED BUTTON DESIGN
+                - p-[1px]: Creates a razor-thin border for elegance.
+                - h-14: Sleek height (56px)
+                - shadow-[0_0_25px...]: Reduced glow spread for a cleaner look.
             */}
             <a 
               href={selectedPlan ? "#subscription-form" : "#plans"} 
-              className="relative inline-flex h-14 overflow-hidden rounded-xl p-[1px] group transform hover:-translate-y-1 transition-all duration-300 shadow-[0_0_30px_rgba(37,99,235,0.5)] hover:shadow-[0_0_50px_rgba(37,99,235,0.7)] focus:outline-none w-full sm:w-auto"
+              className="relative inline-flex h-14 overflow-hidden rounded-xl p-[1px] group transform hover:-translate-y-1 transition-all duration-300 shadow-[0_0_25px_rgba(37,99,235,0.4)] hover:shadow-[0_0_40px_rgba(37,99,235,0.6)] focus:outline-none w-full sm:w-auto"
             >
-              {/* Spinning Light Beam - Blue base with White flash */}
-              <span className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#2563eb_0%,#e0f2fe_50%,#2563eb_100%)]" />
+              {/* Spinning Light Beam - White flash on Blue */}
+              <span className="absolute inset-[-1000%] animate-[spin_4s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#2563eb_0%,#ffffff_50%,#2563eb_100%)]" />
               
-              {/* Vibrant Blue Button Content - Re-added as requested */}
+              {/* Vibrant Blue Button Content */}
               <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-xl bg-gradient-to-r from-blue-600 to-blue-500 px-8 text-lg font-bold text-white backdrop-blur-3xl transition-all hover:brightness-110">
                 {selectedPlan ? "Finalizar Agora" : "Ver Planos"}
                 <ArrowRight className="ml-2 w-5 h-5 text-white group-hover:translate-x-1 transition-transform" />
