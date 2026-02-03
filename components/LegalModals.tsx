@@ -1,6 +1,5 @@
 import React from 'react';
-import { X, FileText, Shield } from 'lucide-react';
-import { TERMS_OF_USE, PRIVACY_POLICY } from '../constants';
+import { X } from 'lucide-react';
 
 interface ModalProps {
   isOpen: boolean;
