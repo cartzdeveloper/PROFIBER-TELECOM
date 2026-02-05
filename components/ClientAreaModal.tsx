@@ -30,7 +30,7 @@ export const ClientAreaModal: React.FC<ClientAreaModalProps> = ({ isOpen, onClos
             
             <div className="flex items-center gap-3">
                 <a 
-                  href="https://central.profiber.net.br" 
+                  href="https://ixc.profiber.net.br" 
                   target="_blank" 
                   rel="noreferrer" 
                   className="hidden sm:flex items-center gap-1.5 text-xs font-medium text-blue-200 hover:text-white bg-blue-800/50 hover:bg-blue-800 px-3 py-1.5 rounded-full transition-colors"
@@ -54,7 +54,7 @@ export const ClientAreaModal: React.FC<ClientAreaModalProps> = ({ isOpen, onClos
                 <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-profiber-royal"></div>
              </div>
              <iframe 
-                src="https://central.profiber.net.br" 
+                src="https://ixc.profiber.net.br" 
                 className="w-full h-full border-0"
                 title="Área do Cliente Profiber"
                 allow="payment; fullscreen; clipboard-read; clipboard-write"
