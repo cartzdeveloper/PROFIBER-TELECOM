@@ -91,16 +91,16 @@ export const FEATURES: Feature[] = [
 
 export const FAQ_ITEMS: FAQItem[] = [
   {
+    question: "Como desbloquear minha internet (Destroque)?",
+    answer: "Você pode realizar o desbloqueio de confiança e retirar a 2ª via da sua fatura diretamente na nossa Central do Assinante acessando ixc.profiber.net.br. O acesso é rápido e prático."
+  },
+  {
     question: "Como proceder em casos de problema com a conexão?",
     answer: "O primeiro passo é reiniciar seus equipamentos (ONU e Roteador), desligando-os da tomada por cerca de 1 minuto. Muitas vezes isso resolve instabilidades temporárias. Se o problema persistir, entre em contato com nosso suporte técnico."
   },
   {
-    question: "O que posso fazer se minha internet não está funcionando?",
-    answer: "Verifique se os cabos estão conectados corretamente e se há luzes acesas no roteador. Tente reiniciar o equipamento. Caso continue sem sinal, acione nosso suporte via WhatsApp para um diagnóstico remoto."
-  },
-  {
     question: "Não recebi a fatura desse mês, como faço para pagá-la?",
-    answer: "É super simples! Basta enviar uma mensagem 'Olá' para o nosso WhatsApp. Nossa assistente virtual enviará seu boleto ou código PIX em segundos. Sem filas e sem precisar baixar aplicativos extras."
+    answer: "Acesse a Central do Assinante (ixc.profiber.net.br) para emitir a 2ª via do boleto ou copiar o código PIX. Se preferir, chame nosso suporte no WhatsApp."
   },
   {
     question: "Quais as formas de pagamento de mensalidades?",
