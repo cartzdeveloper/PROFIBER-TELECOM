@@ -16,7 +16,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenTerms, onOpenPrivacy }) =>
           {/* Brand Info */}
           <div className="space-y-6">
             <img 
-              src="https://profiber.net.br/arquivos_publicos/profiber_logo_brancaedit.png" 
+              src="https://i.ibb.co/pvNn2Rcv/IMG-1778.png" 
               alt="Profiber Telecom" 
               className="h-10 w-auto"
             />

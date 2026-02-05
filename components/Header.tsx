@@ -39,7 +39,7 @@ export const Header: React.FC = () => {
             <div className="flex-shrink-0 flex items-center">
               <a href="#" className="flex items-center gap-2 group">
                 <img 
-                  src="https://profiber.net.br/arquivos_publicos/profiber_logo_brancaedit.png" 
+                  src="https://i.ibb.co/pvNn2Rcv/IMG-1778.png" 
                   alt="Profiber Telecom" 
                   className={`w-auto transition-all duration-300 ${scrolled ? 'h-8 md:h-10' : 'h-10 md:h-12'}`}
                 />

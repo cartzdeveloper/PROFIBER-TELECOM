@@ -85,7 +85,7 @@ export const Hero: React.FC<HeroProps> = ({ selectedPlan }) => {
           {/* Large Logo with slight hover lift */}
           <div className="mb-8 transform hover:scale-105 transition-transform duration-500">
             <img 
-                src="https://profiber.net.br/arquivos_publicos/profiber_logo_brancaedit.png" 
+                src="https://i.ibb.co/pvNn2Rcv/IMG-1778.png" 
                 alt="Profiber Telecom Logo" 
                 className="h-20 md:h-28 lg:h-32 w-auto drop-shadow-[0_0_35px_rgba(59,130,246,0.5)]"
             />

@@ -1,6 +1,6 @@
 # 🌐 Profiber Telecom - High-Performance ISP Landing Page
 
-![Profiber Banner](https://profiber.net.br/arquivos_publicos/profiber_logo_brancaedit.png)
+![Profiber Banner](https://i.ibb.co/pvNn2Rcv/IMG-1778.png)
 
 > Uma Landing Page moderna, responsiva e otimizada para conversão, desenvolvida especialmente para Provedores de Internet (ISP).
 
