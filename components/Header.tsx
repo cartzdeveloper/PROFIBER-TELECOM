@@ -3,10 +3,10 @@ import { Menu, X, User } from 'lucide-react';
 import { CONTACT_INFO } from '../constants';
 
 interface HeaderProps {
-  onOpenClientArea: () => void;
+  // No props needed anymore for client area
 }
 
-export const Header: React.FC<HeaderProps> = ({ onOpenClientArea }) => {
+export const Header: React.FC<HeaderProps> = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -26,12 +26,6 @@ export const Header: React.FC<HeaderProps> = ({ onOpenClientArea }) => {
     { name: 'Vantagens', href: '#benefits' },
     { name: 'Dúvidas', href: '#faq' },
   ];
-
-  const handleClientAreaClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    setIsMenuOpen(false);
-    onOpenClientArea();
-  };
 
   return (
     <>
@@ -69,14 +63,16 @@ export const Header: React.FC<HeaderProps> = ({ onOpenClientArea }) => {
                 </a>
               ))}
               
-              {/* Área do Cliente Button */}
-              <button 
-                onClick={handleClientAreaClick}
+              {/* Área do Cliente Button - Direct Link */}
+              <a 
+                href="https://ixc.profiber.net.br"
+                target="_blank"
+                rel="noreferrer"
                 className="ml-4 px-4 py-2 rounded-full border border-white/20 hover:border-profiber-sky/50 text-gray-200 hover:text-white hover:bg-white/5 text-sm font-medium transition-all flex items-center gap-2 group cursor-pointer"
               >
                 <User className="w-4 h-4 group-hover:text-profiber-sky transition-colors" />
                 Área do Cliente
-              </button>
+              </a>
               
               {/* Desktop CTA Button */}
               <a 
@@ -128,14 +124,16 @@ export const Header: React.FC<HeaderProps> = ({ onOpenClientArea }) => {
             ))}
             
             <div className="pt-2 mt-2 border-t border-white/10 space-y-3">
-              {/* Mobile Client Area Button */}
-              <button
-                 onClick={handleClientAreaClick}
+              {/* Mobile Client Area Button - Direct Link */}
+              <a
+                 href="https://ixc.profiber.net.br"
+                 target="_blank"
+                 rel="noreferrer"
                  className="flex items-center justify-center gap-2 w-full py-3 rounded-xl border border-white/10 bg-white/5 text-white font-medium hover:bg-white/10 transition-colors cursor-pointer"
               >
                 <User className="w-4 h-4" />
                 Área do Cliente
-              </button>
+              </a>
 
               <a 
                  href={`https://wa.me/${CONTACT_INFO.whatsapp}`}

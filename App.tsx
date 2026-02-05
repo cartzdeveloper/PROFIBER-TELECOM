@@ -9,7 +9,6 @@ import { Footer } from './components/Footer';
 import { SubscriptionSection } from './components/SubscriptionSection';
 import { Coverage } from './components/Coverage';
 import { LegalModal } from './components/LegalModals';
-import { ClientAreaModal } from './components/ClientAreaModal';
 import { Plan } from './types';
 import { TERMS_OF_USE, PRIVACY_POLICY, CONTACT_INFO } from './constants';
 
@@ -59,7 +58,6 @@ function App() {
   const [selectedPlan, setSelectedPlan] = useState<Plan | null>(null);
   const [isTermsOpen, setIsTermsOpen] = useState(false);
   const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
-  const [isClientAreaOpen, setIsClientAreaOpen] = useState(false);
   
   const handleSelectPlan = (plan: Plan) => {
     setSelectedPlan(plan);
@@ -72,7 +70,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-slate-50 font-sans selection:bg-blue-200 selection:text-blue-900">
-      <Header onOpenClientArea={() => setIsClientAreaOpen(true)} />
+      <Header />
       <main>
         {/* We wrap each major section with FadeInSection for individual animations */}
         <FadeInSection>
@@ -119,11 +117,6 @@ function App() {
         title="Política de Privacidade"
         content={PRIVACY_POLICY}
         icon={Shield}
-      />
-
-      <ClientAreaModal 
-        isOpen={isClientAreaOpen}
-        onClose={() => setIsClientAreaOpen(false)}
       />
 
       {/* WhatsApp Floating Button */}
