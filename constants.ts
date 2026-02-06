@@ -1,5 +1,4 @@
-import { Clock, Users, Gamepad2, Zap } from 'lucide-react';
-import { Plan, Feature, FAQItem } from './types';
+import { Plan, FAQItem } from './types';
 
 export const PLANS: Plan[] = [
   {
@@ -59,33 +58,6 @@ export const PLANS: Plan[] = [
       "Prioridade no Suporte"
     ],
     isRecommended: false
-  }
-];
-
-export const FEATURES: Feature[] = [
-  {
-    id: 1,
-    icon: Clock,
-    title: "Instalação Ágil",
-    description: "Equipe técnica pronta para conectar você em até 24h após a aprovação."
-  },
-  {
-    id: 2,
-    icon: Users,
-    title: "Suporte Humanizado",
-    description: "Nada de robôs confusos. Fale com gente de verdade via WhatsApp e telefone."
-  },
-  {
-    id: 3,
-    icon: Gamepad2, // Changed icon to represent Gaming/Low Latency
-    title: "Baixa Latência (Ping)",
-    description: "Jogue online e faça vídeo chamadas sem travamentos. Rotas otimizadas para games."
-  },
-  {
-    id: 4,
-    icon: Zap,
-    title: "100% Fibra Óptica",
-    description: "Tecnologia FTTH (Fiber to the Home) garantindo estabilidade total até dentro da sua casa."
   }
 ];
 

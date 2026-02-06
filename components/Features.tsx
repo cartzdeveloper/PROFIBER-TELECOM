@@ -1,5 +1,5 @@
 import React from 'react';
-import { Clock, Users, Gamepad2, Zap, Trophy, Wifi } from 'lucide-react';
+import { Users, Gamepad2, Zap, Trophy, Wifi } from 'lucide-react';
 
 export const Features: React.FC = () => {
   return (
@@ -40,39 +40,39 @@ export const Features: React.FC = () => {
           </div>
 
           {/* Item 2: Square */}
-          <div className="bg-slate-900 border border-white/5 rounded-3xl p-8 flex flex-col justify-between hover:bg-slate-800/50 transition-colors group">
+          <div className="bg-slate-900/50 backdrop-blur-sm border border-white/5 rounded-3xl p-8 flex flex-col justify-between hover:bg-slate-800/50 transition-colors group">
             <div className="w-12 h-12 rounded-2xl bg-green-500/10 flex items-center justify-center text-green-400 mb-4 group-hover:scale-110 transition-transform">
                <Users className="w-6 h-6" />
             </div>
             <div>
               <h3 className="text-xl font-bold text-white mb-2">Suporte Humano</h3>
-              <p className="text-slate-400 text-sm">Nada de robôs. Atendimento rápido via WhatsApp com quem entende.</p>
+              <p className="text-slate-400 text-sm leading-snug">Nada de robôs. Atendimento rápido via WhatsApp com quem entende do assunto.</p>
             </div>
           </div>
 
           {/* Item 3: Square */}
-          <div className="bg-slate-900 border border-white/5 rounded-3xl p-8 flex flex-col justify-between hover:bg-slate-800/50 transition-colors group">
+          <div className="bg-slate-900/50 backdrop-blur-sm border border-white/5 rounded-3xl p-8 flex flex-col justify-between hover:bg-slate-800/50 transition-colors group">
             <div className="w-12 h-12 rounded-2xl bg-orange-500/10 flex items-center justify-center text-orange-400 mb-4 group-hover:scale-110 transition-transform">
                <Zap className="w-6 h-6" />
             </div>
             <div>
               <h3 className="text-xl font-bold text-white mb-2">Instalação Flash</h3>
-              <p className="text-slate-400 text-sm">Equipe técnica pronta para instalar em até 24h após aprovação.</p>
+              <p className="text-slate-400 text-sm leading-snug">Equipe técnica pronta para instalar em até 24h após aprovação do cadastro.</p>
             </div>
           </div>
 
-          {/* Item 4: Wide Strip (Span 3 cols on desktop, usually bottom) - Adjusted to fit grid */}
+          {/* Item 4: Wi-Fi 6 Info */}
           <div className="md:col-span-1 bg-gradient-to-br from-slate-900 to-slate-800 border border-white/5 rounded-3xl p-8 flex flex-col justify-between hover:border-profiber-royal/30 transition-colors group">
              <div className="w-12 h-12 rounded-2xl bg-purple-500/10 flex items-center justify-center text-purple-400 mb-4 group-hover:scale-110 transition-transform">
                <Wifi className="w-6 h-6" />
             </div>
             <div>
               <h3 className="text-xl font-bold text-white mb-2">Wi-Fi 6 Turbo</h3>
-              <p className="text-slate-400 text-sm">Equipamentos de última geração inclusos nos planos premium.</p>
+              <p className="text-slate-400 text-sm leading-snug">Equipamentos de última geração inclusos nos planos para máxima cobertura.</p>
             </div>
           </div>
 
-           {/* Item 5: Wide Strip */}
+           {/* Item 5: Fiber Quality Banner */}
            <div className="md:col-span-2 bg-slate-900 border border-white/5 rounded-3xl p-8 flex items-center justify-between relative overflow-hidden group">
              <div className="relative z-10 max-w-lg">
                 <div className="flex items-center gap-3 mb-3">
@@ -80,9 +80,8 @@ export const Features: React.FC = () => {
                    <span className="text-yellow-500 font-bold uppercase text-xs tracking-wider">Líder em Qualidade</span>
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-2">100% Fibra Óptica</h3>
-                <p className="text-slate-400">Tecnologia FTTH (Fiber to the Home) garantindo estabilidade total até dentro da sua casa, sem interferências.</p>
+                <p className="text-slate-400 text-sm md:text-base">Tecnologia FTTH garantindo estabilidade total até dentro da sua casa, sem perdas ou interferências externas.</p>
              </div>
-             {/* Abstract shape decoration */}
              <div className="absolute right-0 top-0 w-64 h-full bg-gradient-to-l from-profiber-royal/10 to-transparent skew-x-12 group-hover:skew-x-0 transition-transform duration-500"></div>
           </div>
 

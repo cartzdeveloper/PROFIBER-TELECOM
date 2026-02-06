@@ -1,5 +1,3 @@
-import React from 'react';
-
 export interface Plan {
   id: number;
   speed: string;
@@ -8,13 +6,6 @@ export interface Plan {
   features: string[];
   isRecommended: boolean;
   highlightColor?: string;
-}
-
-export interface Feature {
-  id: number;
-  icon: React.ElementType;
-  title: string;
-  description: string;
 }
 
 export interface FAQItem {

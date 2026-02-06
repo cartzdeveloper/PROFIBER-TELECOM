@@ -38,7 +38,7 @@ export const Hero: React.FC<HeroProps> = ({ selectedPlan }) => {
             {selectedPlan ? (
               <>
                 Você escolheu o <br/>
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400 animate-shimmer bg-[length:200%_100%]">
+                <span className="font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400 animate-shimmer bg-[length:200%_100%]">
                   Plano {selectedPlan.speed}
                 </span>
               </>

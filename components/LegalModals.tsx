@@ -26,7 +26,7 @@ export const LegalModal: React.FC<ModalProps> = ({ isOpen, onClose, title, conte
         <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
 
         {/* Modal Content */}
-        <div className="inline-block align-bottom bg-white rounded-2xl text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-2xl w-full">
+        <div className="inline-block align-bottom bg-slate-900/80 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/20 transform transition-all sm:my-8 sm:align-middle sm:max-w-2xl w-full text-left">
           <div className="bg-profiber-royal px-6 py-4 flex justify-between items-center">
             <h3 className="text-xl font-bold text-white flex items-center gap-2">
               <Icon className="w-6 h-6" />
@@ -41,15 +41,15 @@ export const LegalModal: React.FC<ModalProps> = ({ isOpen, onClose, title, conte
           </div>
           
           <div className="px-6 py-6 max-h-[70vh] overflow-y-auto">
-            <div className="prose prose-blue max-w-none text-slate-600 whitespace-pre-line">
+            <div className="max-w-none text-slate-300 whitespace-pre-line text-sm leading-relaxed selection:bg-profiber-sky/20">
               {content}
             </div>
           </div>
           
-          <div className="bg-slate-50 px-6 py-4 flex justify-end">
+          <div className="bg-slate-950/50 border-t border-white/10 px-6 py-4 flex justify-end">
             <button
               type="button"
-              className="inline-flex justify-center rounded-lg border border-transparent shadow-sm px-6 py-2 bg-profiber-royal text-base font-medium text-white hover:bg-blue-700 focus:outline-none sm:text-sm"
+              className="inline-flex justify-center rounded-lg border border-transparent shadow-sm px-6 py-2 bg-profiber-royal text-base font-medium text-white hover:bg-blue-600 focus:outline-none sm:text-sm transition-all transform hover:scale-105"
               onClick={onClose}
             >
               Entendido
