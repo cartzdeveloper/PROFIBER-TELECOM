@@ -1,4 +1,5 @@
-import { Plan, FAQItem } from './types';
+import { Clock, Users, Gamepad2, Zap } from 'lucide-react';
+import { Plan, Feature, FAQItem } from './types';
 
 export const PLANS: Plan[] = [
   {
@@ -61,18 +62,45 @@ export const PLANS: Plan[] = [
   }
 ];
 
-export const FAQ_ITEMS: FAQItem[] = [
+export const FEATURES: Feature[] = [
   {
-    question: "Como desbloquear minha internet (Destroque)?",
-    answer: "Você pode realizar o desbloqueio de confiança e retirar a 2ª via da sua fatura diretamente na nossa Central do Assinante acessando ixc.profiber.net.br. O acesso é rápido e prático."
+    id: 1,
+    icon: Clock,
+    title: "Instalação Ágil",
+    description: "Equipe técnica pronta para conectar você em até 24h após a aprovação."
   },
+  {
+    id: 2,
+    icon: Users,
+    title: "Suporte Humanizado",
+    description: "Nada de robôs confusos. Fale com gente de verdade via WhatsApp e telefone."
+  },
+  {
+    id: 3,
+    icon: Gamepad2, // Changed icon to represent Gaming/Low Latency
+    title: "Baixa Latência (Ping)",
+    description: "Jogue online e faça vídeo chamadas sem travamentos. Rotas otimizadas para games."
+  },
+  {
+    id: 4,
+    icon: Zap,
+    title: "100% Fibra Óptica",
+    description: "Tecnologia FTTH (Fiber to the Home) garantindo estabilidade total até dentro da sua casa."
+  }
+];
+
+export const FAQ_ITEMS: FAQItem[] = [
   {
     question: "Como proceder em casos de problema com a conexão?",
     answer: "O primeiro passo é reiniciar seus equipamentos (ONU e Roteador), desligando-os da tomada por cerca de 1 minuto. Muitas vezes isso resolve instabilidades temporárias. Se o problema persistir, entre em contato com nosso suporte técnico."
   },
   {
+    question: "O que posso fazer se minha internet não está funcionando?",
+    answer: "Verifique se os cabos estão conectados corretamente e se há luzes acesas no roteador. Tente reiniciar o equipamento. Caso continue sem sinal, acione nosso suporte via WhatsApp para um diagnóstico remoto."
+  },
+  {
     question: "Não recebi a fatura desse mês, como faço para pagá-la?",
-    answer: "Acesse a Central do Assinante (ixc.profiber.net.br) para emitir a 2ª via do boleto ou copiar o código PIX. Se preferir, chame nosso suporte no WhatsApp."
+    answer: "É super simples! Basta enviar uma mensagem 'Olá' para o nosso WhatsApp. Nossa assistente virtual enviará seu boleto ou código PIX em segundos. Sem filas e sem precisar baixar aplicativos extras."
   },
   {
     question: "Quais as formas de pagamento de mensalidades?",

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Instagram, Phone, MapPin, MessageCircle, FileText, Shield, Globe } from 'lucide-react';
+import { Instagram, Phone, MapPin, MessageCircle, FileText, Shield } from 'lucide-react';
 import { CONTACT_INFO } from '../constants';
 
 interface FooterProps {
@@ -53,17 +53,8 @@ export const Footer: React.FC<FooterProps> = ({ onOpenTerms, onOpenPrivacy }) =>
               <li><a href="#home" className="text-slate-400 hover:text-profiber-sky transition-colors">Início</a></li>
               <li><a href="#plans" className="text-slate-400 hover:text-profiber-sky transition-colors">Planos</a></li>
               <li><a href="#coverage" className="text-slate-400 hover:text-profiber-sky transition-colors">Cobertura</a></li>
-              <li>
-                <a 
-                  href="https://ixc.profiber.net.br" 
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-profiber-sky hover:text-white transition-colors flex items-center gap-2 font-medium"
-                >
-                  <Globe className="w-3.5 h-3.5" />
-                  Central do Assinante
-                </a>
-              </li>
+              <li><a href="#benefits" className="text-slate-400 hover:text-profiber-sky transition-colors">Vantagens</a></li>
+              <li><a href="#faq" className="text-slate-400 hover:text-profiber-sky transition-colors">Dúvidas</a></li>
             </ul>
           </div>
 
