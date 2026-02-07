@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ArrowRight, Wifi, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Wifi, CheckCircle2, ChevronDown } from 'lucide-react';
 import { Plan } from '../types';
 import { CONTACT_INFO } from '../constants';
 
@@ -15,8 +15,6 @@ export const Hero: React.FC<HeroProps> = ({ selectedPlan }) => {
     const handleMouseMove = (e: MouseEvent) => {
       if (!sectionRef.current) return;
       
-      // Calculate normalized mouse position (-1 to 1)
-      // This centers the coordinate system in the middle of the screen
       const x = (e.clientX / window.innerWidth) * 2 - 1;
       const y = (e.clientY / window.innerHeight) * 2 - 1;
 
@@ -31,12 +29,10 @@ export const Hero: React.FC<HeroProps> = ({ selectedPlan }) => {
     <section 
       ref={sectionRef}
       id="home" 
-      className="relative pt-36 lg:pt-48 pb-24 overflow-hidden bg-profiber-dark min-h-[95vh] flex items-center border-b border-white/5"
+      className="relative pt-36 lg:pt-48 pb-32 overflow-hidden bg-profiber-dark min-h-[95vh] flex items-center border-b border-white/5"
     >
       
       {/* --- Parallax Background Layers --- */}
-      
-      {/* Layer 1: Deep Space Grid (Moves slowly opposite to mouse) */}
       <div 
         className="absolute inset-0 z-0 opacity-20 pointer-events-none transition-transform duration-100 ease-out"
         style={{
@@ -55,7 +51,6 @@ export const Hero: React.FC<HeroProps> = ({ selectedPlan }) => {
         </div>
       </div>
 
-      {/* Layer 2: Glowing Orb (Moves slightly faster for depth) */}
       <div 
         className="absolute top-1/4 right-0 z-0 transition-transform duration-700 ease-out"
         style={{
@@ -65,7 +60,6 @@ export const Hero: React.FC<HeroProps> = ({ selectedPlan }) => {
         <div className="w-[600px] h-[600px] bg-blue-600/20 rounded-full blur-[100px] mix-blend-screen animate-pulse"></div>
       </div>
 
-      {/* Layer 3: Secondary Accent Orb (Left side) */}
       <div 
         className="absolute bottom-0 left-[-10%] z-0 transition-transform duration-1000 ease-out"
         style={{
@@ -82,7 +76,6 @@ export const Hero: React.FC<HeroProps> = ({ selectedPlan }) => {
         {/* Text Content */}
         <div className="w-full lg:w-1/2 text-center lg:text-left flex flex-col items-center lg:items-start">
           
-          {/* Large Logo with slight hover lift */}
           <div className="mb-8 transform hover:scale-105 transition-transform duration-500">
             <img 
                 src="https://i.ibb.co/pvNn2Rcv/IMG-1778.png" 
@@ -125,20 +118,11 @@ export const Hero: React.FC<HeroProps> = ({ selectedPlan }) => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 w-full sm:w-auto items-center">
-            {/* 
-                ULTRA-SOPHISTICATED BUTTON DESIGN
-                - p-[1px]: Creates a razor-thin border for elegance.
-                - h-14: Sleek height (56px)
-                - shadow-[0_0_25px...]: Reduced glow spread for a cleaner look.
-            */}
             <a 
               href={selectedPlan ? "#subscription-form" : "#plans"} 
               className="relative inline-flex h-14 overflow-hidden rounded-xl p-[1px] group transform hover:-translate-y-1 transition-all duration-300 shadow-[0_0_25px_rgba(37,99,235,0.4)] hover:shadow-[0_0_40px_rgba(37,99,235,0.6)] focus:outline-none w-full sm:w-auto"
             >
-              {/* Spinning Light Beam - White flash on Blue */}
               <span className="absolute inset-[-1000%] animate-[spin_4s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#2563eb_0%,#ffffff_50%,#2563eb_100%)]" />
-              
-              {/* Vibrant Blue Button Content */}
               <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-xl bg-gradient-to-r from-blue-600 to-blue-500 px-8 text-lg font-bold text-white backdrop-blur-3xl transition-all hover:brightness-110">
                 {selectedPlan ? "Finalizar Agora" : "Ver Planos"}
                 <ArrowRight className="ml-2 w-5 h-5 text-white group-hover:translate-x-1 transition-transform" />
@@ -163,15 +147,12 @@ export const Hero: React.FC<HeroProps> = ({ selectedPlan }) => {
            <div 
              className="relative rounded-3xl overflow-hidden shadow-[0_30px_60px_-12px_rgba(0,0,0,0.8)] border border-white/10 group transition-all duration-200 ease-out"
              style={{
-               // Apply 3D rotation based on mouse position
                transform: `rotateY(${mousePos.x * 5}deg) rotateX(${mousePos.y * -5}deg)`,
                transformStyle: 'preserve-3d'
              }}
            >
-             {/* Overlay for depth effect */}
              <div className="absolute inset-0 bg-gradient-to-t from-profiber-dark/90 via-transparent to-transparent z-10 pointer-events-none"></div>
              
-             {/* Dynamic Gloss Reflection */}
              <div 
                 className="absolute inset-0 z-20 pointer-events-none opacity-40"
                 style={{
@@ -182,14 +163,13 @@ export const Hero: React.FC<HeroProps> = ({ selectedPlan }) => {
              <img 
                src="https://i.imgur.com/uSKGgmP.jpeg" 
                alt="Futuristic Cyberpunk City representing High Speed" 
-               className="w-full h-auto object-cover opacity-90 scale-105" // Scaled up slightly to prevent edges showing during tilt
+               className="w-full h-auto object-cover opacity-90 scale-105"
              />
 
-             {/* Floating Badge - Moves slightly separate from card for parallax */}
              <div 
                className="absolute bottom-8 left-8 z-30 bg-black/50 backdrop-blur-xl border border-white/10 p-4 rounded-2xl flex items-center gap-4 shadow-xl"
                style={{
-                 transform: 'translateZ(30px)' // Pushes element "out" in 3D space
+                 transform: 'translateZ(30px)'
                }}
              >
                 <div className="p-3 bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl shadow-inner relative overflow-hidden">
@@ -203,6 +183,18 @@ export const Hero: React.FC<HeroProps> = ({ selectedPlan }) => {
              </div>
            </div>
         </div>
+      </div>
+
+      {/* Scroll Indicator - Bottom Arrow */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 hidden sm:flex flex-col items-center gap-2">
+        <span className="text-blue-400/60 text-[10px] uppercase font-bold tracking-[0.2em] mb-1 animate-pulse">Role para explorar</span>
+        <a 
+          href="#plans" 
+          aria-label="Rolar para baixo"
+          className="w-10 h-10 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-white/40 hover:text-profiber-sky hover:border-profiber-sky/30 hover:bg-profiber-sky/5 transition-all duration-300 animate-scroll-hint shadow-lg backdrop-blur-sm"
+        >
+          <ChevronDown className="w-6 h-6" />
+        </a>
       </div>
     </section>
   );

@@ -16,6 +16,9 @@ export default {
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
+      },
+      animation: {
+        'scroll-hint': 'scroll-hint 2.5s ease-in-out infinite',
       }
     },
   },
