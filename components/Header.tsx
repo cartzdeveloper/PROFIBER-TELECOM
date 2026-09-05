@@ -2,7 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X, User } from 'lucide-react';
 import { CONTACT_INFO } from '../constants';
 
-export const Header: React.FC = () => {
+interface HeaderProps {
+  onOpenClientPortal?: () => void;
+}
+
+export const Header: React.FC<HeaderProps> = ({ onOpenClientPortal }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -60,16 +64,17 @@ export const Header: React.FC = () => {
                 </a>
               ))}
               
-              {/* Área do Cliente Button */}
+              {/* Área do Cliente Button - Redirecionamento Direto para o IXC */}
               <a 
-                href="https://ixc.profiber.net.br"
+                href={CONTACT_INFO.ixcPortalUrl}
                 target="_blank"
-                rel="noreferrer"
-                title="Acessar Central do Assinante e Boletos"
-                className="ml-4 px-4 py-2 rounded-full border border-white/20 hover:border-profiber-sky/50 text-gray-200 hover:text-white hover:bg-white/5 text-sm font-medium transition-all flex items-center gap-2 group"
+                rel="noopener noreferrer"
+                onClick={() => onOpenClientPortal?.()}
+                title="Acessar Central do Assinante IXC"
+                className="ml-4 px-4 py-2 rounded-full border border-blue-400/40 bg-blue-900/20 hover:border-profiber-sky text-white hover:bg-blue-600/30 text-sm font-semibold transition-all flex items-center gap-2 group cursor-pointer shadow-sm"
               >
-                <User className="w-4 h-4 group-hover:text-profiber-sky transition-colors" />
-                Área do Cliente
+                <User className="w-4 h-4 text-profiber-sky group-hover:scale-110 transition-transform" />
+                <span>Área do Cliente</span>
               </a>
               
               {/* Desktop CTA Button */}
@@ -124,16 +129,17 @@ export const Header: React.FC = () => {
             ))}
             
             <div className="pt-2 mt-2 border-t border-white/10 space-y-3">
-              {/* Mobile Client Area Button */}
+              {/* Mobile Client Area Button - Redirecionamento Direto para o IXC */}
               <a 
-                 href="https://ixc.profiber.net.br"
+                 href={CONTACT_INFO.ixcPortalUrl}
                  target="_blank"
-                 rel="noreferrer"
+                 rel="noopener noreferrer"
+                 onClick={() => setIsMenuOpen(false)}
                  title="Portal do Cliente IXC"
-                 className="flex items-center justify-center gap-2 w-full py-3 rounded-xl border border-white/10 bg-white/5 text-white font-medium hover:bg-white/10 transition-colors"
+                 className="flex items-center justify-center gap-2 w-full py-3 rounded-xl border border-blue-500/40 bg-blue-900/30 text-white font-bold hover:bg-blue-800/40 transition-colors cursor-pointer"
               >
-                <User className="w-4 h-4" />
-                Área do Cliente
+                <User className="w-4 h-4 text-profiber-sky" />
+                <span>Área do Cliente (IXC)</span>
               </a>
 
               <a 

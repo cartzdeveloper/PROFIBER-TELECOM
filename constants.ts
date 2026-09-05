@@ -124,13 +124,16 @@ export const FAQ_ITEMS: FAQItem[] = [
   }
 ];
 
+export const IXC_CLIENT_PORTAL_URL = "https://ixc.profiber.net.br/central_assinante_web/login";
+
 export const CONTACT_INFO = {
   whatsapp: "5582982190187",
   instagram: "https://www.instagram.com/profibertelecom/",
   address: "Rua Mariano de Freitas, 83 - São Cristóvão, Palmeira dos Índios - AL, 57601-070",
   email: "contato@profiber.net.br",
   cnpj: "10.238.512/0001-44",
-  companyName: "PROFIBER TELECOM LTDA"
+  companyName: "PROFIBER TELECOM LTDA",
+  ixcPortalUrl: "https://ixc.profiber.net.br/central_assinante_web/login"
 };
 
 export const CITIES = [

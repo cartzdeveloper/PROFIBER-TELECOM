@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { ArrowRight, Wifi, CheckCircle2, ChevronDown } from 'lucide-react';
 import { Plan } from '../types';
 import { CONTACT_INFO } from '../constants';
+import { PrecisionParticles } from './PrecisionParticles';
 
 interface HeroProps {
   selectedPlan: Plan | null;
@@ -31,6 +32,8 @@ export const Hero: React.FC<HeroProps> = ({ selectedPlan }) => {
       id="home" 
       className="relative pt-36 lg:pt-48 pb-32 overflow-hidden bg-profiber-dark min-h-[95vh] flex items-center border-b border-white/5"
     >
+      {/* Precision Interactive Fiber Particles */}
+      <PrecisionParticles particleCount={65} theme="dark" interactive={true} />
       
       {/* --- Parallax Background Layers --- */}
       <div 
@@ -69,7 +72,6 @@ export const Hero: React.FC<HeroProps> = ({ selectedPlan }) => {
         <div className="w-[400px] h-[400px] bg-purple-600/10 rounded-full blur-[80px] mix-blend-screen"></div>
       </div>
 
-
       {/* --- Main Content --- */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
         
@@ -84,12 +86,13 @@ export const Hero: React.FC<HeroProps> = ({ selectedPlan }) => {
             />
           </div>
 
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-950/40 border border-blue-500/30 text-blue-200 text-sm font-semibold mb-6 backdrop-blur-md shadow-[0_0_15px_rgba(37,99,235,0.2)]">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-950/50 border border-blue-400/40 text-blue-200 text-sm font-semibold mb-6 backdrop-blur-md shadow-[0_0_20px_rgba(37,99,235,0.3)] animate-pulse-glow">
             <span className="relative flex h-2.5 w-2.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-cyan-500"></span>
             </span>
-            Conexão Fibra 100% Estável
+            <i className="fa-solid fa-bolt-lightning text-cyan-400 text-xs"></i>
+            Conexão Fibra 100% Estável & Wi-Fi 6
           </div>
           
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-white mb-6 leading-[1.15]">
@@ -116,6 +119,22 @@ export const Hero: React.FC<HeroProps> = ({ selectedPlan }) => {
               : "Esqueça o lag e o buffer. Tenha ultravelocidade, baixa latência e suporte que resolve. O futuro da sua conexão começa aqui."
             }
           </p>
+
+          {/* Quick highlights with FontAwesome icons */}
+          <div className="grid grid-cols-3 gap-3 w-full max-w-md mb-8">
+            <div className="flex items-center gap-2 p-2.5 rounded-xl bg-white/[0.04] border border-white/10 backdrop-blur-sm">
+              <i className="fa-solid fa-gauge-high text-cyan-400 text-sm"></i>
+              <span className="text-xs text-slate-200 font-medium">Ping Baixo</span>
+            </div>
+            <div className="flex items-center gap-2 p-2.5 rounded-xl bg-white/[0.04] border border-white/10 backdrop-blur-sm">
+              <i className="fa-solid fa-wifi text-blue-400 text-sm"></i>
+              <span className="text-xs text-slate-200 font-medium">Wi-Fi Turbo</span>
+            </div>
+            <div className="flex items-center gap-2 p-2.5 rounded-xl bg-white/[0.04] border border-white/10 backdrop-blur-sm">
+              <i className="fa-solid fa-shield-halved text-emerald-400 text-sm"></i>
+              <span className="text-xs text-slate-200 font-medium">100% Fibra</span>
+            </div>
+          </div>
           
           <div className="flex flex-col sm:flex-row gap-6 w-full sm:w-auto items-center">
             <a 
@@ -134,8 +153,9 @@ export const Hero: React.FC<HeroProps> = ({ selectedPlan }) => {
                 href={`https://wa.me/${CONTACT_INFO.whatsapp}`} 
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center px-8 py-4 border border-white/10 text-base font-medium rounded-xl text-white bg-white/5 hover:bg-white/10 backdrop-blur-md transition-all hover:border-white/30 w-full sm:w-auto hover:text-blue-200"
+                className="inline-flex items-center justify-center px-8 py-4 border border-white/15 text-base font-medium rounded-xl text-white bg-white/5 hover:bg-white/10 backdrop-blur-md transition-all hover:border-green-500/40 w-full sm:w-auto hover:text-green-300 gap-2.5 group shadow-lg"
               >
+                <i className="fa-brands fa-whatsapp text-green-400 text-xl group-hover:scale-110 transition-transform"></i>
                 Falar no WhatsApp
               </a>
             )}

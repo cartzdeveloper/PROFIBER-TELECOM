@@ -5,9 +5,10 @@ import { CONTACT_INFO } from '../constants';
 interface FooterProps {
   onOpenTerms: () => void;
   onOpenPrivacy: () => void;
+  onOpenClientPortal?: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onOpenTerms, onOpenPrivacy }) => {
+export const Footer: React.FC<FooterProps> = ({ onOpenTerms, onOpenPrivacy, onOpenClientPortal }) => {
   return (
     <footer className="bg-profiber-dark text-white border-t border-white/10 pt-16 pb-6 text-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -55,6 +56,19 @@ export const Footer: React.FC<FooterProps> = ({ onOpenTerms, onOpenPrivacy }) =>
               <li><a href="#coverage" className="text-slate-400 hover:text-profiber-sky transition-colors">Cobertura</a></li>
               <li><a href="#benefits" className="text-slate-400 hover:text-profiber-sky transition-colors">Vantagens</a></li>
               <li><a href="#faq" className="text-slate-400 hover:text-profiber-sky transition-colors">Dúvidas</a></li>
+              <li>
+                <a 
+                  href={CONTACT_INFO.ixcPortalUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => onOpenClientPortal?.()}
+                  className="text-blue-400 hover:text-blue-300 transition-colors font-semibold flex items-center gap-1.5 cursor-pointer"
+                  title="Acessar Central do Assinante IXC em nova aba"
+                >
+                  <i className="fa-solid fa-user-shield text-xs"></i>
+                  <span>Área do Cliente (IXC)</span>
+                </a>
+              </li>
             </ul>
           </div>
 
