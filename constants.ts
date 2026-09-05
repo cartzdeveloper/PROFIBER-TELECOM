@@ -143,7 +143,7 @@ export const CITIES = [
   "Cacimbinhas - AL",
   "Rainha Isabel - PE",
   "Lagoa de São José - PE",
-  "Lagoa dos Leões - PE"
+  "Logradouro dos Leões - PE"
 ];
 
 export const TERMS_OF_USE = `
